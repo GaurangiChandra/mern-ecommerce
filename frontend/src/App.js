@@ -8,6 +8,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import HomeScreen from './screens/HomeScreen'
 
+
 //every item included needs to be wrapped, hence using the header , footer, container and stuff
 //to wrap the elements.
 const App = () => {
