@@ -6,7 +6,7 @@ import React from 'react'
 import {Container} from 'react-bootstrap' 
 import Header from './components/Header'
 import Footer from './components/Footer'
-
+import HomeScreen from './screens/HomeScreen'
 
 //every item included needs to be wrapped, hence using the header , footer, container and stuff
 //to wrap the elements.
@@ -16,9 +16,10 @@ const App = () => {
      
      <>
      <Header />
-     <main>
+     {/* py is a bootstrap class, which provides padding on the y-axis */}
+     <main className="py-3">  
        <Container>
-       <h1>Welcome to Furniture House!</h1>
+       <HomeScreen/>
        </Container>
       </main>
      <Footer />
