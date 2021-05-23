@@ -11,7 +11,7 @@ const Product = ({ product }) => {
       </a>
 
       <Card.Body>
-        <a href={`/product/${product._id}`}>
+        <a href={`/product/${product._id}`} style={{textDecoration :'none'}}>
           <Card.Title as="div">
             <strong>{product.name}</strong>
           </Card.Title>
