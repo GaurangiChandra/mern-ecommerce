@@ -1,0 +1,22 @@
+{
+  "name": "mern-ecommerce",
+  "version": "1.0.0",
+  "description": "MERN furniturehouse app ",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GaurangiChandra/mern-ecommerce.git"
+  },
+  "author": "Gaurangi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GaurangiChandra/mern-ecommerce/issues"
+  },
+  "homepage": "https://github.com/GaurangiChandra/mern-ecommerce#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
