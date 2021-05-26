@@ -10,6 +10,7 @@ const products = [
     price: 10874,
     countInStock: 3,
     rating: 4.5,
+    numReviews: 5,
   },
   {
     _id: "2",
@@ -22,6 +23,7 @@ const products = [
     price: 26198,
     countInStock: 7,
     rating: 4.0,
+    numReviews: 4,
   },
   {
     _id: "3",
@@ -34,6 +36,7 @@ const products = [
     price: 95599,
     countInStock: 5,
     rating: 3,
+    numReviews: 10,
   },
   {
     _id: "4",
@@ -46,6 +49,7 @@ const products = [
     price: 16775,
     countInStock: 11,
     rating: 5,
+    numReviews: 8,
   },
   {
     _id: "5",
@@ -58,6 +62,7 @@ const products = [
     price: 18999,
     countInStock: 7,
     rating: 3.5,
+    numReviews: 5,
   },
   {
     _id: "6",
@@ -70,6 +75,7 @@ const products = [
     price: 10874,
     countInStock: 0,
     rating: 4,
+    numReviews: 2,
   },
 ];
 

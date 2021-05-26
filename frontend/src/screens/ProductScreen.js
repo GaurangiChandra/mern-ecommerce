@@ -1,18 +1,22 @@
-import React from "react";
+import React , { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Row, Col, Image,ListGroup,Card,Button} from "react-bootstrap";
 import Rating from "../components/Rating";
-import products from "../products";
+import axios from "axios";
+
 
 const ProductScreen = ({match}) => {
-    // when we need to match a particular route from the url(query) the we use params
-    // /hosts is a param in this url http://localhost:3000/home
-    // : is used in the route which is matched
-    // in this case, id is passed after :
-    const product = products.find(p=>p._id === match.params.id)
+ const [product , setProduct] = useState({})
+ useEffect(() => {
+    const fetchProduct = async () => {
+      const { data } = await axios.get(`/api/products/${match.params.id}`);
+      setProduct(data);
+    };
+    fetchProduct();
+  }, [match]);
 
   return <> 
-<Link className = 'btn btn-dark my-3' to='/'> 
+<Link className = 'btn btn-light my-3' to='/'> 
  Go Back
 </Link>
 <Row>
