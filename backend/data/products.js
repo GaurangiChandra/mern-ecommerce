@@ -1,6 +1,6 @@
 const products = [
   {
-    _id: "1",
+    
     name: "Fabric Sofa Sets",
     image: "/images/sofa-grey.png",
     description:
@@ -13,7 +13,7 @@ const products = [
     numReviews: 5,
   },
   {
-    _id: "2",
+   
     name: "L-shaped Sofa Sets",
     image: "/images/sofa-7.png",
     description:
@@ -26,7 +26,7 @@ const products = [
     numReviews: 4,
   },
   {
-    _id: "3",
+   
     name: "Leather Sofa Sets",
     image: "/images/sofa-leather.png",
     description:
@@ -39,7 +39,7 @@ const products = [
     numReviews: 10,
   },
   {
-    _id: "4",
+  
     name: "Leatherette Sofa Sets",
     image: "/images/sofa-leatherette.png",
     description:
@@ -52,7 +52,7 @@ const products = [
     numReviews: 8,
   },
   {
-    _id: "5",
+ 
     name: "Futon",
     image: "/images/futon.jpg",
     description:
@@ -65,7 +65,7 @@ const products = [
     numReviews: 5,
   },
   {
-    _id: "6",
+ 
     name: "Sofas",
     image: "/images/sofas.png",
     description:
