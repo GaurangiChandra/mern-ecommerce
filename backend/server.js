@@ -1,23 +1,37 @@
 import express from "express";
 import dotenv from "dotenv";
 import colors from "colors";
-import connectDB from "./config/db.js"
-import productRoute from "./routes/productRoute.js"
+import {notFound , errorHandler} from './middleware/errorMiddleware.js'
+import connectDB from "./config/db.js";
+import productRoute from "./routes/productRoute.js";
 
 dotenv.config();
 
-connectDB()
+connectDB();
 
 const app = express();
+
+app.use((req, res, next) => {
+  console.log(req.originalUrl);
+  next();
+});
 
 app.get("/", (req, res) => {
   res.send("<h1> Api is running.... </h1> ");
 });
 
-app.use('/api/products'  , productRoute)
+app.use("/api/products", productRoute);
 const PORT = process.env.PORT || 5000;
+
+// custom error handling for 404 error
+
+app.use(notFound);
+
+app.use(errorHandler);
 
 app.listen(
   PORT,
-  console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}` .green.bold)
+  console.log(
+    `Server running in ${process.env.NODE_ENV} mode on port ${PORT}`.green.bold
+  )
 );
