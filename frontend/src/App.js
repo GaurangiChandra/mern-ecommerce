@@ -11,6 +11,8 @@ import HomeScreen from "./screens/HomeScreen";
 import ProductScreen from "./screens/ProductScreen";
 import CartScreen from "./screens/CartScreen";
 import LoginScreen from "./screens/LoginScreen";
+import RegisterScreen from "./screens/RegisterScreen";
+
 
 //every item included needs to be wrapped, hence using the header , footer, container and stuff
 //to wrap the elements.
@@ -23,6 +25,7 @@ const App = () => {
         <main className="py-3">
           <Container>
             {/*setting route*/}
+            <Route path="/register" component={RegisterScreen} />
             <Route path="/product/:id" component={ProductScreen} />
             <Route path="/login" component={LoginScreen} />
             <Route path="/cart/:id?" component={CartScreen} />
