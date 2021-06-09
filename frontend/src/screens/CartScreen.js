@@ -50,7 +50,7 @@ const CartScreen = ({ match, location, history }) => {
         ) : (
           <ListGroup variant="flush">
             {cartItems.map((item) => (
-              <ListGroup.Item key={item.product}>
+              <ListGroup.Item  key={item.product}>
                 <Row>
                   <Col md={2}>
                     <Image
@@ -61,7 +61,7 @@ const CartScreen = ({ match, location, history }) => {
                     ></Image>
                   </Col>
                   <Col md={3}>
-                    <Link to={`/product/${item.product}`}>{item.name}</Link>
+                    <Link className='no-underline' to={`/product/${item.product}`}>{item.name}</Link>
                   </Col>
                   <Col md={2}>₹{Number(item.price).toLocaleString()}</Col>
                   <Col md={2}>
@@ -105,7 +105,7 @@ const CartScreen = ({ match, location, history }) => {
                 Sub-Total ({cartItems.reduce((acc, item) => acc + item.qty, 0)})
                 items{" "}
               </h2>
-              ₹{cartItems.reduce((acc , item)=> acc  + item.qty * item.price , 0 )}
+              ₹{Number(cartItems.reduce((acc , item)=> acc  + item.qty * item.price , 0 )).toLocaleString('en-IN')}
             </ListGroup.Item>
             <ListGroup.Item>
                 <Button type ='button' className = 'btn-block' disabled = {cartItems.length===0}
