@@ -66,6 +66,7 @@ const CartScreen = ({ match, location, history }) => {
                   <Col md={2}>₹{Number(item.price).toLocaleString()}</Col>
                   <Col md={2}>
                     <Form.Control
+                     
                       as="select"
                       value={item.qty}
                       onChange={(e) =>
