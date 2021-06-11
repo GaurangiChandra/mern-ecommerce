@@ -10,7 +10,7 @@ const orderSchema = mongoose.Schema(
       },
     name: {
       type: String,
-      required: true,
+      required: false,
     },
     orderItems: [
         {
@@ -49,17 +49,17 @@ const orderSchema = mongoose.Schema(
         type:String,
         required:true
     },
-    postalcode: {
+    postalCode: {
         type:Number,
         required:true
     },
-    Country: {
+    country: {
         type:String,
         required:true
     }},
     paymentMethod: {
       type: String,
-      required: true
+      required: false
     },
     paymentResult: {
         id: {type:String},
