@@ -16,6 +16,7 @@ import ProfileScreen from "./screens/ProfileScreen";
 import ShippingScreen from "./screens/ShippingScreen";
 import PaymentScreen from "./screens/PaymentScreen";
 import PlaceOrderScreen from "./screens/PlaceOrderScreen";
+import OrderScreen from "./screens/OrderScreen";
 
 //every item included needs to be wrapped, hence using the header , footer, container and stuff
 //to wrap the elements.
@@ -36,6 +37,7 @@ const App = () => {
             <Route path="/shipping" component={ShippingScreen} />
             <Route path="/payment" component={PaymentScreen} />
             <Route path="/placeorder" component={PlaceOrderScreen} />
+            <Route path="/order/:id?" component={OrderScreen} />
             <Route path="/" component={HomeScreen} exact />
           </Container>
         </main>
