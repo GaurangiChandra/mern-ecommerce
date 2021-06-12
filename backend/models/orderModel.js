@@ -59,7 +59,7 @@ const orderSchema = mongoose.Schema(
     }},
     paymentMethod: {
       type: String,
-      required: false
+      required: true
     },
     paymentResult: {
         id: {type:String},
