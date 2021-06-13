@@ -4,8 +4,8 @@ import colors from "colors";
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 import connectDB from "./config/db.js";
 import productRoute from "./routes/productRoute.js";
-import userRoute from './routes/userRoute.js'
-import orderRoute from './routes/orderRoute.js'
+import userRoute from "./routes/userRoute.js";
+import orderRoute from "./routes/orderRoute.js";
 
 dotenv.config();
 
@@ -27,6 +27,10 @@ app.get("/", (req, res) => {
 app.use("/api/products", productRoute);
 app.use("/api/users", userRoute);
 app.use("/api/orders", orderRoute);
+
+app.get("/api/config/paypal", (req, res) =>
+  res.send(process.env.PAYPAL_CLIENT_ID)
+);
 
 const PORT = process.env.PORT || 5000;
 

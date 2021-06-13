@@ -22,7 +22,6 @@ export const createOrder = (order) => async (dispatch, getState) => {
       userLogin: { userInfo },
     } = getState();
 
-    console.log(userInfo);
     const config = {
       headers: {
         "Content-Type": "application/json",
@@ -65,8 +64,7 @@ export const getOrderDetails = (id) => async (dispatch, getState) => {
 
     const { data } = await axios.get(`/api/orders/${id}`, config)
     
-    console.log("ordsrs liets");
-    console.log(data);
+
     dispatch({
       type: ORDER_DETAILS_SUCCESS,
       payload: data,
@@ -87,7 +85,7 @@ export const getOrderDetails = (id) => async (dispatch, getState) => {
 }
 
 
-export const payorder = (orderId,paymentResult) => async (dispatch, getState) => {
+export const payOrder = (orderId,paymentResult) => async (dispatch, getState) => {
   try {
     dispatch({
       type: ORDER_PAY_REQUEST,
