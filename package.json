@@ -5,10 +5,11 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
+    "client-install": "npm install --prefix client",
     "backserver": "node backend/server",
     "server": "nodemon backend/server",
     "client": "npm start --prefix frontend",
-    "start": "concurrently \"npm run server \" \"npm run client\" ",
+    "start": "concurrently \"npm run backserver \" \"npm run client\" ",
     "data:import": "node backend/seeder",
     "data:destroy": "node backend/seeder -d"
   },
@@ -29,7 +30,8 @@
     "express": "^4.17.1",
     "express-async-handler": "^1.1.4",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.12.11"
+    "mongoose": "^5.12.11",
+    "multer": "^1.4.2"
   },
   "devDependencies": {
     "concurrently": "^6.2.0",
