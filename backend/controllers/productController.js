@@ -6,9 +6,25 @@ import Product from "../models/productModel.js";
 // @route  GET/api/products
 // @access Public
 const getProducts = asyncHandler(async (req, res) => {
-  const products = await Product.find({});
+  const pageSize = 2 
+  const page = Number(req.query.pageNumber) || 1
+  console.log(req.query)
+  const keyword = req.query.keyword
+  ? {
+      name: {
+        $regex: req.query.keyword,
+        $options: 'i',
+      },
+    }
+  : {}
+  console.log('haha')
+  console.log(keyword)
+
+  const count = await Product.count({...keyword})
+  const products = await Product.find({...keyword}).limit(pageSize).skip(pageSize * (page-1));
+
   // in order to not use try-catch in every block, we will be using expres-async handler
-  res.json(products);
+  res.json({products,page,pages :Math.ceil(count / pageSize)});
 });
 
 // @desc   Fetch single product
