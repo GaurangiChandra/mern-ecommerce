@@ -31,7 +31,12 @@ export const productListReducer = (state = { products: [] }, action) => {
       return { loading: true, products: [] };
     case PRODUCT_LIST_SUCCESS:
       // loading is false here because during the "request" case the loading is already completed.
-      return { loading: false, products: action.payload };
+      return {
+        loading: false,
+        products: action.payload.products,
+        pages: action.payload.pages,
+        page: action.payload.page,
+      };
     case PRODUCT_LIST_FAIL:
       return { loading: false, error: action.payload };
     default:
@@ -106,7 +111,7 @@ export const productReviewCreateReducer = (state = {}, action) => {
     case PRODUCT_CREATE_REVIEW_REQUEST:
       return { loading: true };
     case PRODUCT_CREATE_REVIEW_SUCCESS:
-      return { loading: false, success:true };
+      return { loading: false, success: true };
     case PRODUCT_CREATE_REVIEW_FAIL:
       return { loading: false, error: action.payload };
     case PRODUCT_CREATE_REVIEW_RESET:
@@ -115,6 +120,5 @@ export const productReviewCreateReducer = (state = {}, action) => {
       return state;
   }
 };
-
 
 // to use this reducer we need to add it to our store.js

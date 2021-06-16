@@ -23,14 +23,14 @@ import {
 
 //  we use dispatch to dispatch the actions(cases) presents
 export const listProducts =
-  (keyword ='') =>
+  (keyword = '' , pageNumber ='') =>
   async (
     dispatch //  redux thunk let us add a function within the function
   ) => {
     try {
       dispatch({ type: PRODUCT_LIST_REQUEST });
 
-      const { data } = await axios.get(`/api/products?keyword=${keyword}`);
+      const { data } = await axios.get(`/api/products?keyword=${keyword}&pageNumber=${pageNumber}`);
       console.log(data)
       dispatch({ type: PRODUCT_LIST_SUCCESS, payload: data });
     } catch (error) {
