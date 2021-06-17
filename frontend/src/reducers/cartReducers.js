@@ -45,11 +45,13 @@ export const cartReducer = (
         paymentMethod: action.payload,
       }
     case CART_CLEAR_ITEMS:
+      console.log(state.cartItems)
       return {
-        ...state,
+      
         cartItems: [],
       }
     default:
+      console.log(state.cartItems)
       return state
   }
 }

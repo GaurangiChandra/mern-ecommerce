@@ -142,7 +142,7 @@ const ProductScreen = ({ history, match }) => {
           </Col>
           <Row>
             <Col md={6}>
-              <h4>Reviews</h4>
+              <h2>Reviews</h2>
               {product.reviews.length === 0 && <Message>No Reviews</Message>}
               <ListGroup variant="flush">
                 {product.reviews.map((review) => (
