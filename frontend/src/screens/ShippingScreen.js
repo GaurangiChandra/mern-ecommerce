@@ -7,12 +7,23 @@ import { saveShippingAddress } from "../actions/cartActions";
 
 const ShippingScreen = ({ history }) => {
   const cart = useSelector((state) => state.cart);
-  const { shippingAddress } = cart;
+  console.log(cart);
 
-  const [address, setAddress] = useState(shippingAddress.address);
-  const [city, setCity] = useState(shippingAddress.city);
-  const [postalCode, setPostalCode] = useState(shippingAddress.postalCode);
-  const [country, setCountry] = useState(shippingAddress.country);
+  const [address, setAddress] = useState(
+    cart.shippingAddress ? cart.shippingAddress.address : ""
+  );
+  const [city, setCity] = useState(
+    cart.shippingAddress ? cart.shippingAddress.city : ""
+  );
+  const [postalCode, setPostalCode] = useState(
+    cart.shippingAddress ? cart.shippingAddress.postalCode : ""
+  );
+  const [country, setCountry] = useState(
+    cart.shippingAddress ? cart.shippingAddress.country : ""
+  );
+
+  console.log("added items by setState");
+  console.log(cart);
 
   const dispatch = useDispatch();
 
@@ -24,8 +35,9 @@ const ShippingScreen = ({ history }) => {
 
   return (
     <FormContainer>
-      <CheckoutSteps step1 step2/>
+      <CheckoutSteps step1 step2 />
       <h1> Shipping </h1>
+
       <Form onSubmit={submitHandler}>
         <Form.Group controlId="address">
           <Form.Label>Address</Form.Label>

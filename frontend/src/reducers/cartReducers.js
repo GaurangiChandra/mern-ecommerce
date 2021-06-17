@@ -14,8 +14,9 @@ export const cartReducer = (
     case CART_ADD_ITEM:
       const item = action.payload
 
+      console.log('Printing state')
+      console.log(state)
       const existItem = state.cartItems.find((x) => x.product === item.product)
-
       if (existItem) {
         return {
           ...state,
@@ -35,9 +36,11 @@ export const cartReducer = (
         cartItems: state.cartItems.filter((x) => x.product !== action.payload),
       }
     case CART_SAVE_SHIPPING_ADDRESS:
+         console.log(action.payload)
       return {
         ...state,
         shippingAddress: action.payload,
+        
       }
     case CART_SAVE_PAYMENT_METHOD:
       return {
@@ -45,13 +48,11 @@ export const cartReducer = (
         paymentMethod: action.payload,
       }
     case CART_CLEAR_ITEMS:
-      console.log(state.cartItems)
       return {
-      
+        ...state,
         cartItems: [],
       }
     default:
-      console.log(state.cartItems)
       return state
   }
 }

@@ -24,12 +24,18 @@ const CartScreen = ({ match, location, history }) => {
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
 
-  console.log(cartItems);
+
   useEffect(() => {
     if (productId) {
+      console.log('Printing cart')
+      console.log(cart)
       dispatch(addToCart(productId, qty));
+      
+      console.log('Prinitng stae after cart')
+      console.log(cart)
     }
   }, [dispatch, productId, qty]);
+  
 
   const removeFromCartHandler = (id) => {
     dispatch(removeFromCart(id))
@@ -39,6 +45,7 @@ const CartScreen = ({ match, location, history }) => {
   {
       history.push('/login?redirect=shipping')
   }
+  
   return (
     <Row>
       <Col md={8}>
